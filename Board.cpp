@@ -98,6 +98,27 @@ void Board::visualizeBoard(const Color perspective) const{
 
 Bitboard Board::slidingMoves(const Square square, const Bitboard occupiedBoard, const std::array<int, 2>& deltas) {
     // return a move mask representing possible sliding moves from a square given occupancies on a board and the move directions
+    /* Example
+     * Given occupiedBoard
+    0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0
+    0  0  0  0  1  0  0  0
+    0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0
+
+     * result
+    0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0
+    0  0  0  1  0  0  0  0
+    0  0  1  0  0  0  0  0
+    0  1  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0
+     */
 
     Bitboard res = BB_EMPTY;
 

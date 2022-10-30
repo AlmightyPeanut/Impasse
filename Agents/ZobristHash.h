@@ -5,7 +5,7 @@
 #pragma once
 
 #include <array>
-#include "Board.h"
+#include "../Board.h"
 
 typedef u_int64_t Hash;
 typedef u_int32_t HashKey;

@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "Move.h"
-#include "Board.h"
+#include "../Move.h"
+#include "../Board.h"
 #include "ZobristHash.h"
 #include <map>
 #include <array>

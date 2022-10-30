@@ -1,0 +1,28 @@
+Impasse game representation
+- Bitboards
+- Move Table for sliding moves
+- Move generation with move table
+- Test with games generated with Ludii random agent
+
+Alpha-Beta search
+- ID NegaMax with early stops
+- TT with TwoBig comparison
+- Quiscence search for crowning moves
+- Move ordering
+    - Previous principal variation (either as first move or add to killer moves)
+    - TT move
+    - Killer moves
+    - Heuristics
+        - Crowning + Bear off
+        - Longer moves
+        - History heuristic
+        - At the root node: from last ID iteration
+- Principal variation search
+
+Evaluation
+- Piece difference
+- Distances of Singles/Doubles to the last/first rank
+- isImpasse
+- Can Crown
+- Difference Doubles/Singles
+- TD learning: Automatic tweaking of the weights (did not converge properly)

@@ -7,7 +7,7 @@
 #include <array>
 #include <set>
 #include "BaseAgent.h"
-#include "../TT.h"
+#include "TT.h"
 #include "evaluate.h"
 
 enum NodeType {

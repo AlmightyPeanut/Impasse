@@ -6,7 +6,7 @@
 #include <filesystem>
 #include <iostream>
 #include <fstream>
-#include "ZobristHash.h"
+#include "Agents/ZobristHash.h"
 
 void validateGame(const std::filesystem::directory_entry &path) {
     ZobristHash hash = ZobristHash();
@@ -21,11 +21,13 @@ void validateGame(const std::filesystem::directory_entry &path) {
 
     while (getline(gameFile, line)) {
         if (isBoardStr) {
+            // test board parsing + execution of moves
             std::string boardStr = board.getBoardNotation();
             if(boardStr != line) {
                 throw std::runtime_error("Board notation in file " + std::string(path.path()) + " has failed");
             }
         } else {
+            // test move parsing
             Move move = Move::fromNotation(line);
             std::string moveStr = std::string(move);
             if(moveStr != line) {
@@ -43,6 +45,7 @@ void validateGame(const std::filesystem::directory_entry &path) {
             }
             board.makeMove(move);
 
+            // test hash creation
             hashValue = hash.continuousHash(hashValue, oldBoard, move);
             Hash initHash = hash.initialHash(board);
             if(hashValue != initHash) {
